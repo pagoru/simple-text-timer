@@ -1,0 +1,17 @@
+{
+  "name": "simple-text-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pagoru/simple-text-timer.git"
+  },
+  "author": "pagoru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pagoru/simple-text-timer/issues"
+  },
+  "homepage": "https://github.com/pagoru/simple-text-timer#readme",
+  "keywords": ["timer","timing","progress","indicator","text"]
+}
