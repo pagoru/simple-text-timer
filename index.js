@@ -61,7 +61,7 @@ module.exports = class SimpleTextTimer {
         let seconds = sec_num - (hours * 3600) - (minutes * 60);
 
         if(hours === 0 && minutes === 0 && seconds === 0) return '0s';
-        return (hours === 0 ? "" : `${hours}h `) + (minutes === 0 ? "" : `${minutes}m `) + (seconds === 0 ? "" : `${seconds}s`);
+        return (hours === 0 ? "" : `${hours}h `) + (minutes === 0 ? "" : `${minutes}m `) + (seconds === 0 ? "" : `${seconds}s`).replace(/\s+$/, '');
     }
 
 };
