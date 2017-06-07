@@ -12,6 +12,7 @@ module.exports = class SimpleTextTimer {
         this._lastValue = ((obj.lastValue === undefined) ? 60 : obj.lastValue);
 
         this._increment = this._currentValue < this._lastValue;
+        this._isOver = false;
 
         this._loop();
     }
@@ -27,7 +28,10 @@ module.exports = class SimpleTextTimer {
                 elements[i].innerHTML = this.getParsedTime();
             }
         }
-        if(this._currentValue === this._lastValue) return;
+        if(this._currentValue === this._lastValue) {
+            this._isOver = true;
+            return;
+        }
         this._currentValue = this._increment ? this._currentValue + 1 : this._currentValue - 1;
         setTimeout(this._loop.bind(this), 1000);
     }
@@ -40,6 +44,10 @@ module.exports = class SimpleTextTimer {
     }
     pause(){
         this._paused = true;
+    }
+
+    isOver() {
+        return this._isOver;
     }
 
     getCurrentValue(){
